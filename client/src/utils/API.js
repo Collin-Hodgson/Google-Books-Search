@@ -1,5 +1,6 @@
 import axios from "axios";
 const apiKey = "AIzaSyDJEz5DNEa7Bho8eTiNP35kQECpqnKs9i8";
+const URL = "https://www.googleapis.com/books/v1/volumes?q=";
 
 export default {
   // Gets all books
