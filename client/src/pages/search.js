@@ -9,7 +9,7 @@ import { Input, FormBtn } from "../components/Form";
 function Search() {
   // Setting our component's initial state
   const [res, books, setBooks] = useState([]);
-  const [search, formObject, setFormObject] = useState({});
+  const [search, formObject, setFormObject] = useState("");
 
   // // Load all books and store them with setBooks
   // useEffect(() => {
@@ -75,18 +75,20 @@ function Search() {
           <Container fluid>
             {books.length ? (
               <List>
-                <ListItem key={books._id}>
-                  <Container fluid>
-                    <Col
-                      id={res.id}
-                      title={res.title}
-                      authors={res.authors}
-                      image={res.image}
-                      description={res.description}
-                    ></Col>
-                    <SaveBtn handleSave={handleSave} books={books}></SaveBtn>
-                  </Container>
-                </ListItem>
+                {books.map((books) => (
+                  <ListItem key={books._id}>
+                    <Container fluid>
+                      <Col
+                        id={res.id}
+                        title={res.title}
+                        authors={res.authors}
+                        image={res.image}
+                        description={res.description}
+                      ></Col>
+                      <SaveBtn handleSave={handleSave} books={books}></SaveBtn>
+                    </Container>
+                  </ListItem>
+                ))}
               </List>
             ) : (
               <h3>No Results to Display</h3>

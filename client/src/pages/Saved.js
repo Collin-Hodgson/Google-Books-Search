@@ -40,18 +40,20 @@ function Detail(props) {
           <Container fluid>
             {books.length ? (
               <List>
-                <ListItem key={books._id}>
-                  <Container fluid>
-                    <Col
-                      id={res.id}
-                      title={res.title}
-                      authors={res.authors}
-                      image={res.image}
-                      description={res.description}
-                    ></Col>
-                    <DeleteBtn deleteBook={deleteBook} id={id}></DeleteBtn>
-                  </Container>
-                </ListItem>
+                {books.map((books) => (
+                  <ListItem key={books._id}>
+                    <Container fluid>
+                      <Col
+                        id={res.id}
+                        title={res.title}
+                        authors={res.authors}
+                        image={res.image}
+                        description={res.description}
+                      ></Col>
+                      <DeleteBtn deleteBook={deleteBook} id={id}></DeleteBtn>
+                    </Container>
+                  </ListItem>
+                ))}
               </List>
             ) : (
               <h3>You have no saved any books</h3>
