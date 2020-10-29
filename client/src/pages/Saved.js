@@ -3,9 +3,11 @@ import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import { List, ListItem } from "../components/List";
+import DeleteBtn from "../components/DeleteBtn";
 
 function Detail(props) {
-  const [book, setBook] = useState({});
+  const [res, setBook] = useState({});
 
   function deleteBook(id) {
     API.deleteBook(id)
@@ -44,7 +46,7 @@ function Detail(props) {
                         image={res.image}
                         description={res.description}
                       ></Col>
-                      <SaveBtn deleteBook={deleteBook} id={id}></SaveBtn>
+                      <DeleteBtn deleteBook={deleteBook} id={id}></DeleteBtn>
                     </Container>
                   </ListItem>
                 ))}
