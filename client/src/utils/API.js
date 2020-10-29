@@ -14,9 +14,7 @@ export default {
       };
     });
   },
-};
 
-export default {
   // Gets all books
   getBooks: function () {
     return axios.get("/api/books");
