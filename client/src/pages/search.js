@@ -76,6 +76,13 @@ function Books() {
                 {books.map((book) => (
                   <ListItem key={book._id}>
                     <Container fluid>
+                      <Col
+                        id={book.id}
+                        title={book.title}
+                        authors={book.authors}
+                        image={book.image}
+                        description={book.description}
+                      ></Col>
                       <SaveBtn
                         handleSave={handleSave}
                         bookData={bookData}
