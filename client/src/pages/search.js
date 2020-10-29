@@ -8,7 +8,7 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 
-function Books() {
+function Search() {
   // Setting our component's initial state
   const [books, setBooks] = useState([]);
   const [formObject, setFormObject] = useState({});
@@ -101,4 +101,4 @@ function Books() {
   );
 }
 
-export default Books;
+export default Search;
