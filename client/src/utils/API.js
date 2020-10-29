@@ -8,9 +8,9 @@ export default {
       return {
         id: res.id,
         title: res.volumeInfo.title,
-        author: res.volumeInfo.description,
-        image: thumbnail,
-        link: res.volumeInfo.previewLink,
+        author: res.volumeInfo.author,
+        image: res.imageLinks.thumbnail,
+        link: res.selfLink,
       };
     });
   },
