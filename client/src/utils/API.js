@@ -4,7 +4,15 @@ const URL = "https://www.googleapis.com/books/v1/volumes?q=";
 
 export default {
   booksByTitle: function (search) {
-    return axios.get(URL + search + apiKey);
+    return axios.get(URL + search + apiKey).then((res) => {
+      return {
+        id: res.id,
+        title: res.volumeInfo.title,
+        author: res.volumeInfo.description,
+        image: thumbnail,
+        link: res.volumeInfo.previewLink,
+      };
+    });
   },
 };
 
