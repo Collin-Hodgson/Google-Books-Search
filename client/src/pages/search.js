@@ -11,10 +11,10 @@ function Search() {
   const [books, setBooks] = useState([]);
   const [formObject, setFormObject] = useState({});
 
-  // Load all books and store them with setBooks
-  useEffect(() => {
-    loadBooks();
-  }, []);
+  // // Load all books and store them with setBooks
+  // useEffect(() => {
+  //   loadBooks();
+  // }, []);
 
   // Loads all books and sets them to books
   function loadBooks() {
@@ -23,12 +23,12 @@ function Search() {
       .catch((err) => console.log(err));
   }
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
-      .then((res) => loadBooks())
-      .catch((err) => console.log(err));
-  }
+  // // Deletes a book from the database with a given id, then reloads books from the db
+  // function deleteBook(id) {
+  //   API.deleteBook(id)
+  //     .then((res) => loadBooks())
+  //     .catch((err) => console.log(err));
+  // }
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
