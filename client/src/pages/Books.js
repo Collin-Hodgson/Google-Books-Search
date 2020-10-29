@@ -55,9 +55,9 @@ function Books() {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-6">
+        <Col size="md-12">
           <Jumbotron>
-            <h1>Search Book By Title</h1>
+            <h1>Google Book Search</h1>
           </Jumbotron>
           <form>
             <Input
@@ -65,12 +65,7 @@ function Books() {
               name="title"
               placeholder="Title (required)"
             />
-            <FormBtn
-              disabled={!(formObject.author && formObject.title)}
-              onClick={handleFormSubmit}
-            >
-              Submit Book
-            </FormBtn>
+            <FormBtn onClick={handleSearchSubmit}>Search</FormBtn>
           </form>
         </Col>
         <Col size="md-6 sm-12">
