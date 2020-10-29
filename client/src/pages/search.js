@@ -36,21 +36,23 @@ function Search() {
     setFormObject({ ...formObject, [name]: value });
   }
 
-  function handleSearchSubmit(event)
-
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
   function handleSearchSubmit(event) {
     event.preventDefault();
     if (search) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis,
-      })
-        .then((res) => loadBooks())
-        .catch((err) => console.log(err));
+      loadBooks();
     }
+  }
+
+  // When the form is submitted, use the API.saveBook method to save the book data
+  // Then reload books from the database
+  function handleSave(book) {
+    API.saveBook({
+      _id: book.id,
+      title: book.title,
+      author: book.author,
+      description: book.description,
+      image: book.image,
+    });
   }
 
   return (
