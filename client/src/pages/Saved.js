@@ -29,14 +29,6 @@ function Detail(props) {
           <Jumbotron>
             <h1>Google Book Search</h1>
           </Jumbotron>
-          <form>
-            <Input
-              onChange={handleInputChange}
-              name="title"
-              placeholder="Title (required)"
-            />
-            <FormBtn onClick={handleSearchSubmit}>Search</FormBtn>
-          </form>
         </Col>
         <Col size="md-12">
           <Container fluid>
@@ -52,16 +44,13 @@ function Detail(props) {
                         image={res.image}
                         description={res.description}
                       ></Col>
-                      <SaveBtn
-                        handleSave={handleSave}
-                        bookData={bookData}
-                      ></SaveBtn>
+                      <SaveBtn deleteBook={deleteBook} id={id}></SaveBtn>
                     </Container>
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>You have no saved any books</h3>
             )}
           </Container>
         </Col>
