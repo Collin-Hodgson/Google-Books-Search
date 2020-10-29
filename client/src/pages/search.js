@@ -18,7 +18,7 @@ function Search() {
 
   // Loads all books and sets them to books
   function loadBooks() {
-    API.getBooks()
+    API.booksByTitle(search)
       .then((res) => setBooks(res.data))
       .catch((err) => console.log(err));
   }
@@ -36,11 +36,13 @@ function Search() {
     setFormObject({ ...formObject, [name]: value });
   }
 
+  function handleSearchSubmit(event)
+
   // When the form is submitted, use the API.saveBook method to save the book data
   // Then reload books from the database
-  function handleFormSubmit(event) {
+  function handleSearchSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (search) {
       API.saveBook({
         title: formObject.title,
         author: formObject.author,
@@ -75,11 +77,11 @@ function Search() {
                   <ListItem key={book._id}>
                     <Container fluid>
                       <Col
-                        id={book.id}
-                        title={book.title}
-                        authors={book.authors}
-                        image={book.image}
-                        description={book.description}
+                        id={res.id}
+                        title={res.title}
+                        authors={res.authors}
+                        image={res.image}
+                        description={res.description}
                       ></Col>
                       <SaveBtn
                         handleSave={handleSave}
